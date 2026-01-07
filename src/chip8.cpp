@@ -51,12 +51,15 @@ Chip8::Chip8() {
         randByte = std::uniform_int_distribution<uint8_t>(0, 255U);
     }
 
+    std::default_random_engine randGen;
+    std::uniform_int_distribution<uint8_t> randByte;
+
     pc = START_ADDRESS; // set PC start address to unreserved space
 
     for (unsigned int i = 0; i < FONT_SIZE; i++) { // load font into memory
         memory[FONT_START_ADDRESS + i] = fontset[i];
     }
 
-
+    
 }
 
